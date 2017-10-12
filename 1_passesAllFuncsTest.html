@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+	<title>Passes All Functions Test</title>
+</head>
+<body>
+
+</body>
+<script>
+let log = x => console.log(x)
+/* 
+  Write a function that takes an number and an array of funcs as input.
+  Return true only if the number returns true for all funcs in the array.
+*/
+
+let func1 = x => x > 10 	// input is greater than 10
+let func2 = x => x < 100	// input is less than 100
+let func3 = x => x % 3 === 0// input is evenly divisible by 3
+let myArrayOfFuncs = [func1, func2, func3]
+let testNumber = 30
+
+//first test to see that testNumber can pass all of the tests alone..
+// log(func1(testNumber))//true with testNumber as 30
+// log(func2(testNumber))//true with testNumber as 30
+// log(func3(testNumber))//true with testNumber as 30
+
+let funcTest = (num, arrayOfFuncs) => {
+  return arrayOfFuncs.reduce((a,b)=>{
+    return a && b(num);
+  },true)
+}
+log(funcTest(testNumber, myArrayOfFuncs))
+
+/*
+  Success! Notice in the reduce how we start with an accumulator value of true. Accumulating down to a boolean 
+  works fine in this case since any falsey value along the chain will forever toxify the output. 
+*/
+// </script>
+</html>
+
