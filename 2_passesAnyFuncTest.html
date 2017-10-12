@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+	<title>interview qs</title>
+</head>
+<body>
+</body>
+<script>
+let log = x => console.log(x)
+
+/* 
+  Write a function that takes an number and an array of funcs as input.
+  Return true only if the number returns true for AT LEAST ONE func in the array.
+*/
+let func1 = x => x < 100 		// input is less than 100
+let func2 = x => x % 10 === 0	// input is evenly divisible by 10
+let func3 = x => x % 5 === 0		// input is evenly divisible by 5
+let myArrayOfFuncs = [func1, func2, func3];
+let testNumber = 105
+//first test to see the results of testNumber pass into all of tests as their parameter..
+log(func1(testNumber))//false with testNumber as 105
+log(func2(testNumber))//false with testNumber as 105
+log(func3(testNumber))//true with testNumber as 105
+
+let funcTest = (num, arrayOfFuncs) => {
+  return arrayOfFuncs.reduce((a,b)=>{
+    return a || b(num)
+  },false)
+}
+log(funcTest(testNumber, myArrayOfFuncs))
+
+/*
+  Our reduce had a starting accumulator of false.
+  As we stepped through array, our ||or is what popped 
+  us into a truthy value as soon as possible. From then
+  on out, it doesn't matter if any other values end up falsey.
+*/
+
+// </script>
+</html>
+
