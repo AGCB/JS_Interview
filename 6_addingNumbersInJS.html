@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>DoveDove</title>
+</head>
+<body>
+
+<script>
+/* 
+  TAKE 2 NUMBERS FROM USER. ADD THEM BOTH AND LOG OUT THE SUM. 
+  TEST FOR 5 + 2 = 7
+  TEST FOR 2.25 + 5.75 = 8
+*/
+	let a = Number(prompt('please enter a number'))
+	let b = Number(prompt('please enter a number'))
+	let c = +(a + b).toFixed(2);
+	console.log(c)
+
+/* 
+  There are a few gotchas with this one in JS. 
+  1 is to make sure that you dealing with Number types as opposed to strings.
+    This can be done with +prefix or Number()
+  2 is that JS, just like Java, PHP, Ruby, and C have floating point numbers, aka
+    Double, aka IEEE-754. So we deal with that with the toFixed() method at the 
+    end of the sum. the parameter tells us with how many decimal points of precision
+    we force it to.   
+*/	
+</script>
+
+</body>
+</html>
