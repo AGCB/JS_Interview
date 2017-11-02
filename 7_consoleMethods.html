@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+	<title>Cardio</title>
+</head>
+<body>
+
+
+<script>
+/* 
+  .log()is the beginning of the journey
+  then .table() to show objects in greater detail than .log()
+  .time() and timeEnd() for checking the length in MS of Execution Time
+  
+*/
+console.log('hello world');
+// an array of Objects called innovators.
+// this is just to have some dummy data to work with.
+
+	const innovators = [{
+  first:'harry', last:'nordof', years: 20, spiritAnimal:'turtles'},
+	{first:'harry', last:'scutti', years: 15, spiritAnimal:'lion'},
+	{first:'todd', last:'thomas', years: 22, spiritAnimal:'tiger'},
+	{first:'sam', last:'wier', years: 13, spiritAnimal:'rabbit'},
+	{first:'donny', last:'palone', years: 8, spiritAnimal:'wolf'},
+	{first:'erick', last:'rafi', years: 30, spiritAnimal:'rabbit'},]
+
+	// console.table(innovators)
+  //.table() method is more useful than .log() in this case
+
+
+/* 
+  You can check elapsed time on specific lines of code in MilliSeconds by 
+  wrapping the code in .time() and .timeEnd() methods.
+  .time() and .timeEnd() take a string as input which ends up being the name of the timer.
+  one small caveat is that the string needs to be identical in .time() and timeEnd()
+*/
+
+console.time('timerName');
+// timerName has now been started. All code up to timeEnd() 
+// is counted. 
+let agc = x => x.length; 
+console.log(agc('four'));
+console.timeEnd('timerName');
+
+
+</script>
+</body>
+</html>
