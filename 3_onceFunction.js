@@ -16,3 +16,26 @@ console.log(once()) //returns 'sorry'
 
 /* a different idea for line 7 is to just set once to undefined. 
    */
+
+/* 
+  The next idea would be returning an inner function that
+  had a closure over the once() answer variable.
+  
+*/
+
+function once(func) {
+  let answer;
+  return (x) => {
+    if (answer === undefined) {
+      answer = func(x)
+    return answer;
+    }
+   else {return answer;}
+  }
+  
+}
+
+let onceFunc = once(addByTwo);
+// console.log(onceFunc(5));  //should log 7
+// console.log(onceFunc(100));  //should log 102
+// console.log(onceFunc(1002));  //should log 1004
