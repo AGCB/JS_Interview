@@ -34,8 +34,9 @@ function once(func) {
   }
   
 }
+function addByTwo(x) { return x+2;}
 
 let onceFunc = once(addByTwo);
-// console.log(onceFunc(5));  //should log 7
-// console.log(onceFunc(100));  //should log 102
-// console.log(onceFunc(1002));  //should log 1004
+// console.log(onceFunc(5));  //should log 5
+// console.log(onceFunc(100));  //should log 5
+// console.log(onceFunc(1002));  //should log 5
