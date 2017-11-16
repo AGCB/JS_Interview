@@ -1,5 +1,6 @@
 /**
-  Write a function that takes an array of 
+  Write a function that returns only elements found in all input arrays.
+  taken from Codesmith JSHP
 */
 function intersection(...arrays) {
   return arrays.reduce((x,y)=>{
